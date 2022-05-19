@@ -4,3 +4,56 @@
   box-sizing: border-box;
 }
 
+body,
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  background-color: grey;
+  width: 100vw;
+  height: 100vh;
+}
+
+#game-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.box {
+  position: absolute;
+  background: url(puppy.jpg);
+  border: 1px solid grey;
+  color: transparent;
+  cursor: pointer;
+  height: 100px;
+  width: 100px;
+  transition: top 0.3s linear, left 0.3s linear;
+}
+
+.box:last-of-type {
+  background: none;
+  border: none;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+}
+
+.button {
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 30px;
+  padding: 5px;
+}
+
+.button:hover {
+  color: grey;
+}
