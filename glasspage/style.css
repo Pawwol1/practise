@@ -1,0 +1,26 @@
+:root {
+    --green: #38ccae;
+    --dark: #1b1b1b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right top, var(--dark), var(--green));
+}
+
+.container {
+    height: 66%;
+    width: 66%;
+    background: linear-gradient(to right top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2));
+    border-radius: 20px;
+}
