@@ -3,3 +3,61 @@
     --red: #c0390b;
     --orange: #e67e20;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.egg {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 200px;
+    height: 300px;
+    margin: 40px;
+    background: var(--red);
+    border-radius: 100px / 180px 180px 120px 120px;
+    overflow: hidden;
+}
+
+.stripe {
+    width: 100%;
+    height: 50px;
+    background: var(--yellow);
+    border-top: solid 6px var(--orange);
+    border-bottom: solid 6px var(--orange);
+}
+
+.stripe--zigzac {
+    background: var(--orange);
+    background-image: linear-gradient(45deg, var(--yellow) 25%, transparent 0),
+    linear-gradient(135deg, var(--yellow) 25%, transparent 0),
+    linear-gradient(225deg, var(--yellow) 25%, transparent 0),
+    linear-gradient(315deg, var(--yellow) 25%, transparent 0);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 0, 20px 0, 0 0;
+}
+
+.stripe--heart {
+    background-image: linear-gradient(135deg, var(--orange) 15%, transparent 0),
+    linear-gradient(225deg, var(--orange) 15%, transparent 0),
+    radial-gradient(var(--orange) 30%, transparent 0),
+    radial-gradient(var(--orange) 30%, transparent 0);
+    background-size: 40px 40px;
+    background-position: 21px 22px, 21px 22px, -4px -3px, 6px -3px;
+}
+
+.stripe--point {
+    background-image: radial-gradient(var(--orange) 2px, transparent 0),
+    radial-gradient(var(--orange) 4px, transparent 0);
+    background-size: 18px 18px;
+    background-position: 18px 18px, 28px 28px;
+}
