@@ -36,6 +36,8 @@ body {
     justify-content: center;
     align-items: flex-start;
     align-content: flex-start;
+    position: relative;
+    z-index: 1;
 }
 
 .santa__beard {
@@ -45,6 +47,7 @@ body {
     width: 100%;
     position: absolute;
     top: 75%;
+    z-index: 2;
 }
 
 .santa__face__eyes {
@@ -58,7 +61,7 @@ body {
 .santa__face_eye {
     background-color: black;
     border-radius: 100%;
-    margin: 0 8px;
+    margin: 0 3%;
     height: 100%;
     width: 15%;
     position: relative;
@@ -113,6 +116,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    z-index: 2;
 }
 
 .santa__hat__top {
@@ -124,8 +128,8 @@ body {
 
 .santa__hat__stripe {
     background-color: white;
-    border-radius: 5%/50%;
-    height: 50%;
+    border-radius: 5% / 50%;
+    height: 45%;
     width: 100%;
     position: relative;
 }
@@ -154,3 +158,23 @@ body {
     bottom: 0;
 }
 
+.santa__cap__tail {
+    background-color: var(--red-color);
+    border-radius: 0 100% 0 0;
+    height: 70%;
+    width: 80%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: rotate(30deg);
+}
+
+.santa__cap__tail__bubble {
+    background-color: white;
+    border-radius: 100%;
+    height: 50%;
+    width: 25%;
+    position: absolute;
+    right: -5%;
+    top: 70%;
+}
