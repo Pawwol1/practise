@@ -1,6 +1,6 @@
 :root {
-    --color-bg: #fff;
-    --color-main: #000;
+    --bg-color: white;
+    --main-color: black;
 }
 
 * {
@@ -8,3 +8,159 @@
     margin: 0;
     padding: 0;
 }
+
+body {
+    background: var(--bg-color);
+    color: var(--main-color);
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    font-family: "Lohit Odia", sans-serif;
+    height: 100vh;
+    width: 100vw;
+    padding: 50px 34px;
+    overflow: hidden;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 960px;
+    width: 100%;
+}
+
+.title {
+    font-size: 52px;
+}
+
+.switch {
+    background-color: black;
+    border: solid 5px white;
+    border-radius: 50px;
+    cursor: pointer;
+    height: 100px;
+    width: 200px;
+    position: relative;
+}
+
+.icon {
+    background-color: grey;
+    border-radius: 100%;
+    content: "";
+    display: block;
+    height: 60px;
+    width: 60px;
+    margin: 12px 26px;
+    position: relative;
+    transition: background-color 0.35s, transform 0.35s;
+}
+
+span {
+    color: var(--main-color);
+    font-size: 18px;
+    padding: 12px 0;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 960px;
+    width: 100%;
+}
+
+p {
+    font-size: 26px;
+    padding: 13px 0;
+    text-align: left;
+}
+
+.btn {
+    background: var(--bg-color);
+    border: solid 0.3vw;
+    color:  var(--main-color);
+    cursor: pointer;
+    font-family: "Lohit Odia", sans-serif;
+    font-size: 34px;
+    margin: 24px 0;
+    padding: 24px 34px;
+    transition: background 0.35s, color 0.35s;
+}
+
+.btn:hover {
+    background: var(--main-color);
+    color: var(--bg-color);
+}
+
+/*LIGHT MODE*/
+
+body.light {
+    --bg-color: white;
+    --main-color: black;
+}
+
+body.light .icon {
+    background: grey;
+    transform: translateX(0);
+}
+
+body.light .icon::after {
+    content: none;
+}
+
+/*DARK MODE*/
+
+body.dark {
+    --bg-color: black;
+    --main-color: white;
+}
+
+body.dark .icon {
+    background: yellow;
+    transform: translateX(85px);
+}
+
+body.dark .icon::after {
+    content: "";
+    background-color: black;
+    border-radius: 100%;
+    display: block;
+    height: 50px;
+    width: 40px;
+    position: absolute;
+    left: -5px;
+    top: 5px;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        --bg-color: black;
+        --main-color: white;
+    }
+
+    body .icon {
+        background: yellow;
+        transform: translateX(80px);
+    }
+
+    body .icon::after {
+        content: "";
+        background-color: black;
+        border-radius: 100%;
+        display: block;
+        height: 50px;
+        width: 40px;
+        position: absolute;
+        left: -5px;
+        top: 5px;
+    }
+}
+
+
+
+
