@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(60deg, rgb(64, 160, 160), rgb(78, 75, 225));
+    color: #fff;
+    font-family: Suruma, sans-serif;
+    min-height: 100vh;
+    min-width: 100vw;
+    padding: 64px;
+}
