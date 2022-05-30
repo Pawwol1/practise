@@ -10,5 +10,49 @@ body {
     font-family: Suruma, sans-serif;
     min-height: 100vh;
     min-width: 100vw;
-    padding: 64px;
+    padding: 54px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-x: hidden;
 }
+
+h1 {
+    font-size: 86px;
+    text-align: center;
+    margin: 86px;
+}
+
+.gallery_list {
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.6));
+    border-radius: 26px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    list-style: none;
+    padding: 54px;
+}
+
+.picture {
+    border: 3px solid rgba(255, 255, 255, 0.75);
+    border-radius: 20px;
+    box-shadow: 0 0 32px 1px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    margin: 28px;
+    max-height: 250px;
+    max-width: 250px;
+    transition: transform 0.33s;
+    overflow: hidden;
+}
+
+.picture:hover {
+    transform: scale(1.33);
+}
+
+.picture img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/*21*/
