@@ -55,4 +55,87 @@ h1 {
     object-fit: cover;
 }
 
-/*21*/
+.picture img:focus,
+.picture img:focus-visible {
+    border: 5px solid rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+}
+
+.pop_up {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(15px);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: appear 0.33s;
+}
+
+.pop_up.hidden {
+    display: none;
+}
+
+.pop_up.fade {
+    animation: fade 0.33s both;
+}
+
+.pop_up__img {
+    height:75%;
+    width: 75%;
+}
+
+.pop_up__close {
+    background-color: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    font-size: 92px;
+    position: fixed;
+    top: 72px;
+    right: 72px;
+    transition: color 0.33s;
+}
+
+.pop_up__close:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.pop_up__arrow {
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 92px;
+    line-height: 92px;
+    height: 92px;
+    width: 92px;
+    position: absolute;
+    top: 50%;
+    opacity: 0.4;
+    transition: opacity 0.33s;
+}
+
+.pop_up__arrow:hover {
+    opacity: 0.8;
+}
+
+.pop_up__arrow--left {
+    left: 5%;
+}
+
+.pop_up__arrow--right {
+    right: 5%;
+}
+
+@keyframes appear {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+@keyframes fade {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}

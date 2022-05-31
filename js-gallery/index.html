@@ -12,16 +12,22 @@
     <h1>Gallery</h1>
 <!--    emmet drukujący całą galerię ul.gallery_list>li.picture*8>img[src="images/image$.jpg"]    -->
     <ul class="gallery_list">
-        <li class="picture"><img src="images/image1.jpg" alt=""></li>
-        <li class="picture"><img src="images/image2.jpg" alt=""></li>
-        <li class="picture"><img src="images/image3.jpg" alt=""></li>
-        <li class="picture"><img src="images/image4.jpg" alt=""></li>
-        <li class="picture"><img src="images/image5.jpg" alt=""></li>
-        <li class="picture"><img src="images/image6.jpg" alt=""></li>
-        <li class="picture"><img src="images/image7.jpg" alt=""></li>
-        <li class="picture"><img src="images/image8.jpg" alt=""></li>
+        <li class="picture"><img tabindex="0" src="images/image1.jpg" alt=""></li>
+        <li class="picture"><img tabindex="0" src="images/image2.jpg" alt=""></li>
+        <li class="picture"><img tabindex="0" src="images/image3.jpg" alt=""></li>
+        <li class="picture"><img tabindex="0" src="images/image4.jpg" alt=""></li>
+        <li class="picture"><img tabindex="0" src="images/image5.jpg" alt=""></li>
+        <li class="picture"><img tabindex="0" src="images/image6.jpg" alt=""></li>
+        <li class="picture"><img tabindex="0" src="images/image7.jpg" alt=""></li>
+        <li class="picture"><img tabindex="0" src="images/image8.jpg" alt=""></li>
     </ul>
-
+    <div class="pop_up hidden">
+        <button aria-label="Close pop-up" class="pop_up__close">X</button>
+        <img src="" alt="" class="pop_up__img">
+        <button aria-label="Previous photo" class="pop_up__arrow pop_up__arrow--left"><</button>
+        <button aria-label="Next photo" class="pop_up__arrow pop_up__arrow--right">></button>
+    </div>
+    
 <script src="app.js"></script>
 </body>
 </html>
