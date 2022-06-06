@@ -26,16 +26,22 @@ body {
 
 label[for="name"],
 p {
-    font-size: 52px;
-    margin: 26px 0;
+    font-size: 2.5rem;
+    margin-bottom: 26px;
 }
 
 input[id="name"] {
     border-radius: 20px;
     border: none;
-    font-size: 2rem;
-    padding: 2rem;
+    font-size: 1.5rem;
+    padding: 1rem;
+    width: 300px;
     box-shadow: inset 0 8px 12px 0 rgba(0, 0, 0, 0.3);
+    outline: none;
+}
+
+input[id="name"]:focus {
+    border: 2px solid rgba(0, 0, 0, 0.8);
 }
 
 button {
@@ -45,15 +51,20 @@ button {
     border: none;
     box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.3);
     cursor: pointer;
-    font-size: 32px;
+    font-size: 1.5rem;
     height: 75px;
-    width: 100px;
-    margin-top: 26px;
+    width: 120px;
     transition: background-color 0.33s;
 }
 
 button:hover {
     background-color: rgba(0, 50, 100, 0.1);
+    border: 2px solid black;
+}
+
+.categories {
+    list-style: none;
+    padding-top: 25px;
 }
 
 .tasks {
@@ -64,10 +75,20 @@ button:hover {
 }
 
 li {
-    font-size: 32px;
+    font-size: 1.5rem;
     margin: 0 12px;
 }
 
-input[type="checkbox"] {
-    margin-left: 10px;
+input {
+    margin: 0 10px;
+}
+
+.gym {
+    text-decoration: underline;
+}
+.work {
+    color: darkred;
+}
+.hobby {
+    color: lightblue;
 }
