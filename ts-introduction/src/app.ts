@@ -1,22 +1,33 @@
 const tasksContainerEl: HTMLElement = document.querySelector(".tasks");
 const taskInputEl: HTMLInputElement = document.querySelector("#name");
 const addBtnEL: HTMLButtonElement = document.querySelector("button");
+const categoriesContainerEl: HTMLElement = document.querySelector(".categories");
 
-const tasks: {
+let selectedCategory: Category;
+
+type Category = "general" | "work" | "gym" | "hobby";
+
+interface Task {
     name: string;
     done: boolean;
-}[] = [
+    category?: Category;
+}
+
+const categories: Category[] = ["general", "work", "gym", "hobby"];
+
+const tasks: Task[] = [
     {
-    name: "Wyrzucić śmieci",
-    done: false
+        name: "Wyrzucić śmieci",
+        done: false,
     },
     {
-    name: "Siłownia",
-    done: true
+        name: "Siłownia",
+        done: true,
+        category: "gym"
     },
     {
-    name: "Nakarmić psa",
-    done: true
+        name: "Nakarmić psa",
+        done: true,
     },
 ];
 
@@ -24,6 +35,9 @@ const render = () => {
     tasksContainerEl.innerHTML = "";
     tasks.forEach((task, index) => {
         const taskEl: HTMLElement = document.createElement("li");
+        if (task.category) {
+            taskEl.classList.add(task.category);
+        }
         const id: string = `task-${index}`;
 
         const labelEl: HTMLLabelElement = document.createElement("label");
@@ -45,14 +59,39 @@ const render = () => {
     });
 };
 
-const addTask = (taskName: string) => {
-    tasks.push({name: taskName, done: false});
+const renderCategories = () => {
+
+    categories.forEach(category => {
+        const categoryEl: HTMLElement = document.createElement("li");
+
+        const radioInputEl: HTMLInputElement = document.createElement("input");
+        radioInputEl.type = "radio";
+        radioInputEl.name = "category";
+        radioInputEl.value = category;
+        radioInputEl.id = `category-${category}`;
+        radioInputEl.addEventListener("change", () => {
+            selectedCategory = category;
+        })
+
+        const radioLabelEl: HTMLLabelElement = document.createElement("label");
+        radioLabelEl.setAttribute("for", `category-${category}`);
+        radioLabelEl.innerText = category;
+
+        categoryEl.appendChild(radioInputEl);
+        categoryEl.appendChild(radioLabelEl);
+        categoriesContainerEl.appendChild(categoryEl);
+    });
+};
+
+const addTask = (task: Task) => {
+    tasks.push(task);
 }
 
 addBtnEL.addEventListener("click", (e: Event) => {
     e.preventDefault();
-    addTask(taskInputEl.value);
+    addTask({name: taskInputEl.value, done: false, category: selectedCategory});
     render();
 });
 
+renderCategories();
 render();
