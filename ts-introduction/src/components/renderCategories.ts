@@ -1,5 +1,20 @@
 import {Category} from "../types/types.js";
 
+const handleCategoryChange = (category: Category) => {
+    if (category === Category.GENERAL) {
+        console.log("Zmiana na general!");
+    } else if (category === Category.GYM) {
+        console.log("Zmiana na gym!")
+    } else if (category === Category.WORK) {
+        console.log("Zmiana na work!")
+    } else if (category === Category.HOBBY) {
+        console.log("Zmiana na hobby!")
+    } else {
+        const never: never = category;
+        console.log(never, "Nigdy tego nie zobaczysz!");
+    }
+}
+
 export const renderCategories = (
     categories: Category[],
     categoriesContainerEl: HTMLElement,
@@ -15,6 +30,7 @@ export const renderCategories = (
         radioInputEl.id = `category-${category}`;
         radioInputEl.addEventListener("change", () => {
             inputChange(category);
+            handleCategoryChange(category);
         })
 
         const radioLabelEl: HTMLLabelElement = document.createElement("label");
@@ -26,3 +42,4 @@ export const renderCategories = (
         categoriesContainerEl.appendChild(categoryEl);
     });
 };
+
