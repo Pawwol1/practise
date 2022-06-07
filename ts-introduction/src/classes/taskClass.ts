@@ -1,15 +1,15 @@
 import {Category} from "../types/types.js";
 
 interface Logger {
-    logCreationDate: (addition: string) => void;
+    logCreationDate: (addition: string) => void; // dodatek, czesto stosowany w Angular;
 }
 
 export class TaskClass implements Logger {
-   public name: string;
+   public name: string;    // public jest domyślny;
    public done: boolean;
    public category?: Category;
 
-   private createdAt: Date;
+   private createdAt: Date;  // klucza private nie można wywołać w nowym Tasku;
 
     constructor(
         name: string,
